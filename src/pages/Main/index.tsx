@@ -28,18 +28,31 @@ export default function main() {
       destination: position,
       duration: 2,
     })
-    draw4(viewerRef.current.cesiumElement)
+    // draw4(viewerRef.current.cesiumElement)
     console.log(viewerRef.current.cesiumElement)
     // editPolygonTools = new CesiumEditPolygon(viewerRef.current.cesiumElement)
-    // editPolygonTools = new draw(viewerRef.current.cesiumElement)
+    editPolygonTools = new draw(viewerRef.current.cesiumElement)
     // editPolygonTools = new draw2(viewerRef.current.cesiumElement)
     // editPolygonTools = draw2(viewerRef.current.cesiumElement,'point')
+    // draw3(viewerRef.current.cesiumElement)
 
     polygon_height = viewerRef.current.cesiumElement.entities.add({
       name: 'polygon_height',
       polygon: {
         show: true,
         hierarchy: Cesium.Cartesian3.fromDegreesArray([110.0, 30.0, 120.0, 30.0, 115.0, 40.0]),
+        height: 0,
+        material: Cesium.Color.CYAN.withAlpha(0.5),
+        outline: true,
+        outlineColor: Cesium.Color.BLACK,
+      },
+    })
+
+    polygon_height = viewerRef.current.cesiumElement.entities.add({
+      name: 'polygon_height2',
+      polygon: {
+        show: true,
+        hierarchy: Cesium.Cartesian3.fromDegreesArray([111.0, 30.0, 121.0, 30.0, 115.0, 40.0]),
         height: 0,
         material: Cesium.Color.CYAN.withAlpha(0.5),
         outline: true,
